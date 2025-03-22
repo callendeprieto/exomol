@@ -1,0 +1,4 @@
+gfortran isosum.f -o isosum.exe
+gfortran list.f -o list.exe
+gfortran merge.f -o merge.exe
+gfortran reverse.f -o reverse.exe
