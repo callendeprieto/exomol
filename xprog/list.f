@@ -110,7 +110,7 @@ c
 c     read file with partition functions for the given isotopologue
 c
       open(unit=7,file=pfile,status='old')
-      read(7,*) t1,pf1
+cc    read(7,*) t1,pf1
 c     
    35 continue
       read(7,*) t2,pf2
@@ -127,7 +127,7 @@ c
       im=i
       pafile= molname(1:im) // '.pf'
       open(unit=7,file=pafile,status='old')
-      read(7,*) ta1,pfa1
+cc    read(7,*) ta1,pfa1
    45 continue
       read(7,*) ta2,pfa2
       if(ta2.gt.999.9.and.ta2.lt.1000.1) go to 47
@@ -141,15 +141,14 @@ c
       relu=1.
       relu1=1.
       relu2=1.
-      relu1=pf1/pfa1
+c     relu1=pf1/pfa1
       relu2=pf2/pfa2
       relu=relu2
       fis=fiso
       fiso=log10(fiso/relu)
 c
-      write(6,601) t1,pf1,ta1,pfa1,relu1,t2,pf2,ta2,pfa2,relu2
-  601 format(' T = ',0pf10.1,1pe11.3,0pf10.1,1pe11.3,0pf10.3/
-     *       ' T = ',0pf10.1,1pe11.3,0pf10.1,1pe11.3,0pf10.3/)
+      write(6,601) t2,pf2,ta2,pfa2,relu2
+  601 format(' T = ',0pf10.1,1pe11.3,0pf10.1,1pe11.3,0pf10.3/)
       write(6,604) fis,relu,fiso
   604 format(' isot.fract. ',f11.4/
      *       ' U(iso)/U(av)',f11.4/
@@ -198,8 +197,6 @@ c     vac=1.e20
 c        if(n.le.2) write(6,641) i,wl0,alm,xn1,wlam
          WL0=WL0/(XN1*1.E-6+1.)
          wlam=wl0*0.1
-c        if(i.le.2) write(6,641) i,wl0,alm,xn1,wlam
-c 641    format(i3,1p4e13.6)
       END IF
 c
       gf=log10(a*wlam0*wlam0*g(nu)*con)+fiso
@@ -213,6 +210,7 @@ c 610 format(f10.4,f10.2,f8.3,f12.3,1p3e10.2)
       go to 70
    80 continue
       close(12)
+      close(10)
 c
       write(*,*) 'read',n,' transitions; included',ninc
       close(6)
