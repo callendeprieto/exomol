@@ -1,4 +1,5 @@
 gfortran -fno-automatic isosum.f -o isosum.exe
 gfortran -fno-automatic list.f -o list.exe
+gfortran -fno-automatic list2.f -o list2.exe
 gfortran -fno-automatic merge.f -o merge.exe
 gfortran -fno-automatic reverse.f -o reverse.exe
