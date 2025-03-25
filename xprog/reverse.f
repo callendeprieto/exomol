@@ -16,4 +16,6 @@ c
          write(6,501) a(i)
       end do
 c
+      close(6)
+c
       end

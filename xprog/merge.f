@@ -60,5 +60,7 @@ c
       write(*,*) 'number of lines in the second list',j
   611 format(f10.4,f10.2,f8.3,f12.3,1p3e10.2)
 c
+      close(11)
+c
       end
  
