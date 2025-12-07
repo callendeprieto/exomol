@@ -181,7 +181,8 @@ c     if(wtr.gt.wtbeg) go to 80
       if(e(nu)-e(nl).le.0.) go to 70
       if(e(nu).gt.0..and.e(nu).lt.2.e5.and.
      *   e(nl).gt.0..and.e(nl).lt.2.e5) then
-      wlam=1.d7/(e(nu)-e(nl))
+CC    wlam=1.d7/(e(nu)-e(nl))
+      wlam=1.d7/wtr
       if(wlam.ge.wend*0.999999) go to 70
       if(wlam.lt.wbeg) go to 70
 c
