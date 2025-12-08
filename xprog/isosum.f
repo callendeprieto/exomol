@@ -1,6 +1,6 @@
       program isosum
 c
-      parameter (mt=10000,mato=26,miso=58,mcomp=6)
+      parameter (mt=10000,mato=26,miso=58,mcomp=20)
       dimension tem(mt,mcomp),pf(mt,mcomp),partf(mt),ntem(mcomp)
       dimension fra(mato,miso),t(mt),fract(mcomp),tin(mt),pin(mt)
       dimension dtem(mcomp),pfint(mt)
