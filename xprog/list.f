@@ -41,7 +41,7 @@ c        ordering needed by Synspec - short to long wavelengths
 c
 c
       implicit real*8(a-h,o-z)
-      parameter (mt=10000,mst=1000000,mato=26,miso=58)
+      parameter (mt=10000,mst=1000000,mato=92,miso=290)
       dimension t(mt),partf(mt)
       dimension fra(mato,miso)
 
@@ -150,9 +150,9 @@ c
       write(6,601) t2,pf2,ta2,pfa2,relu2
   601 format(' T = ',0pf10.1,1pe11.3,0pf10.1,1pe11.3,0pf10.3/)
       write(6,604) fis,relu,fiso
-  604 format(' isot.fract. ',f11.4/
-     *       ' U(iso)/U(av)',f11.4/
-     *       ' log(cor.fac)',f11.4)   
+  604 format(' isot.fract. ',f21.14/
+     *       ' U(iso)/U(av)',f21.14/
+     *       ' log(cor.fac)',f21.14)   
 c           
       open(unit=11,file=sfile,status='old')
       open(unit=12,file=tfile,status='old')

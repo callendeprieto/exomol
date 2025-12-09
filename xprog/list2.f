@@ -41,7 +41,7 @@ c        ordering needed by Synspec - short to long wavelengths
 c
 c
       implicit real*8(a-h,o-z)
-      parameter (mt=10000,mst=1000000,mato=26,miso=58)
+      parameter (mt=10000,mst=1000000,mato=92,miso=290)
       dimension t(mt),partf(mt)
       dimension fra(mato,miso)
 
